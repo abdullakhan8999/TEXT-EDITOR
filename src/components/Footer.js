@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <p>© 2022 Company, Inc. All rights reserved.</p>
       <ul className="list-unstyled d-flex">
         <li className="ms-3">
-          <a className="text-light  text-capitalize" href="#">
+          <Link className="text-light  text-capitalize" to="#">
             twitter
             <img
               src="https://img.icons8.com/color/2x/twitter--v3.png"
@@ -17,10 +17,10 @@ export default function Footer() {
               height="24"
               alt="twitter"
             />
-          </a>
+          </Link>
         </li>
         <li className="ms-3">
-          <a className="text-light text-capitalize text-capitalize   " href="#">
+          <Link className="text-light text-capitalize text-capitalize" to="#">
             instagram
             <img
               src="https://img.icons8.com/color/512/instagram-new.png"
@@ -29,10 +29,10 @@ export default function Footer() {
               height="24"
               alt="instagram"
             />
-          </a>
+          </Link>
         </li>
         <li className="ms-3">
-          <a className="text-light text-capitalize text-capitalize  " href="#">
+          <Link className="text-light text-capitalize text-capitalize" to="#">
             facebook
             <img
               src="https://img.icons8.com/color/2x/facebook.png"
@@ -41,7 +41,7 @@ export default function Footer() {
               height="24"
               alt="facebook"
             />
-          </a>
+          </Link>
         </li>
       </ul>
     </footer>

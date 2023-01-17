@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./TextForm.css"
+import "./TextForm.css";
 export default function TextForm({ heading, showAlert }) {
   const [text, setText] = useState("");
 
@@ -33,18 +33,6 @@ export default function TextForm({ heading, showAlert }) {
     }
     const sentence = newSentence.join(" ");
     setText(sentence);
-  };
-
-  const wordsCounter = (text) => {
-    if (!text.trim()) {
-      return 0;
-    }
-    // remove all non-word characters
-    const modifiedText = text.replace(/[^\w\s]/gi, "");
-    // split the modified text on spaces
-    const words = modifiedText.split(/\s+/);
-    // return the number of words
-    return words.length;
   };
 
   const handleClearSentence = (event) => {
@@ -90,20 +78,58 @@ export default function TextForm({ heading, showAlert }) {
 
   return (
     <div className="container p-3 min-vh-100 border-light">
-      <div className=" d-flex justify-content-lg-between">
-        <h3 htmlFor="floatingTextarea" className="fw-bold my-2">
-          {heading}
-        </h3>
-        
-        <button
-          type="submit"
-          className="my-1 btn btn-primary"
-          onClick={handleClearSentence}
-        >
-          Clear
-        </button>
+      <div className="d-flex row align-items-center justify-content-between">
+        <div className="col-8">
+          <h3 htmlFor="floatingTextarea" className="fw-bold my-2">
+            {heading}
+          </h3>
+        </div>
+        <div className="col-4 d-grid gap-2 d-md-flex justify-content-md-end">
+          <button
+            type="submit"
+            className="btn"
+            // style={{
+            //   "max-height": "50px",
+            // }}
+            onClick={handlePaste}
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/1834/1834036.png"
+              style={{ "max-height": "2rem" }}
+              alt="Paste"
+            />
+          </button>
+          <button
+            type="submit"
+            className="btn"
+            // style={{
+            //   "max-height": "50px",
+            // }}
+            onClick={handleCopy}
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3867/3867474.png"
+              style={{ "max-height": "2rem" }}
+              alt="Copy"
+            />
+          </button>
+          <button
+            type="submit"
+            className="btn"
+            // style={{
+            //   "max-height": "50px",
+            // }}
+            onClick={handleClearSentence}
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/1276/1276453.png"
+              style={{ "max-height": "2rem" }}
+              alt="Clear"
+            />
+          </button>
+        </div>
       </div>
-      <form className="mb-3">
+      <form className="my-3">
         <textarea
           className="my-2 form-control"
           rows="5"
@@ -112,58 +138,63 @@ export default function TextForm({ heading, showAlert }) {
           onChange={handleOnChange}
           value={text}
         ></textarea>
-        
-        <button
-          type="submit"
-          className="my-1 btn btn-primary  me-3"
-          onClick={handleToUppercase}
-        >
-          Covert To Uppercase
-        </button>
-        <button
-          type="submit"
-          className="my-1 btn btn-primary me-3"
-          onClick={handleToLowercase}
-        >
-          Covert To Lowercase
-        </button>
-
-        <button
-          type="submit"
-          className="my-1 btn btn-primary me-3"
-          onClick={handleCapitalizeSentence}
-        >
-          Capitalize Sentence
-        </button>
-
-        <button
-          type="submit"
-          className="my-1 btn btn-primary me-3"
-          onClick={handleExtraSpace}
-        >
-          Extra Space
-        </button>
-
-        <button
-          type="submit"
-          className="my-1 btn btn-primary me-3"
-          onClick={handleCopy}
-        >
-          Copy
-        </button>
-
-        <button
-          type="submit"
-          className="my-1 btn btn-primary me-3"
-          onClick={handlePaste}
-        >
-          Paste
-        </button>
-
+        <div className="row my-3">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button
+              type="submit"
+              className="my-1 btn btn-primary  me-3"
+              onClick={handleToUppercase}
+            >
+              Covert To Uppercase
+            </button>
+            <button
+              type="submit"
+              className="my-1 btn btn-primary me-3"
+              onClick={handleToLowercase}
+            >
+              Covert To Lowercase
+            </button>
+            <button
+              type="submit"
+              className="my-1 btn btn-primary me-3"
+              onClick={handleCapitalizeSentence}
+            >
+              Capitalize Sentence
+            </button>
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button
+              type="submit"
+              className="my-1 btn btn-primary me-3"
+              onClick={handleExtraSpace}
+            >
+              Extra Space
+            </button>
+            <button
+              type="submit"
+              className="my-1 btn btn-primary me-3"
+              onClick={handleCopy}
+            >
+              Copy
+            </button>
+            <button
+              type="submit"
+              className="my-1 btn btn-primary me-3"
+              onClick={handlePaste}
+            >
+              Paste
+            </button>
+          </div>
+        </div>
         <div className="container">
           <h3>Summary of text:</h3>
           <p>
-            {wordsCounter(text)} words and {text.length} character
+            {
+              text.split(" ").filter((e) => {
+                return e.length !== 0;
+              }).length
+            }
+            words and {text.length} character
           </p>
           <h2>Preview</h2>
           <p>

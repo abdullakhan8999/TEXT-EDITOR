@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-// import About from "./components/About";
+import About from "./components/About";
 import Footer from "./components/Footer";
 import Alert from "./components/Alert";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [alert, setAlert] = useState(null);
@@ -37,28 +37,27 @@ export default function App() {
   };
   return (
     <>
-      {/*<Router>*/}
+      <Router>
         <Navbar
           siteName={"MaNa CaseMaster"}
           mode={mode}
           toggleDarkMode={toggleDarkMode}
         />
         <Alert alert={alert} />
-        {/*<Routes>
+        <Routes>
           <Route
             path="/"
-  element={*/}
+            element={
               <TextForm
                 showAlert={showAlert}
                 heading={"MaNa CaseMaster: Effortlessly Convert Text Cases"}
               />
-            {/*}
+            }
           />
           <Route path="about" element={<About />} />
-        </Routes>*/}
+        </Routes>
         <Footer />
-      {/*</Router>*/}
+      </Router>
     </>
   );
-
 }
