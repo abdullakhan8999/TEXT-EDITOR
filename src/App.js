@@ -11,7 +11,8 @@ export default function App() {
   // setTimeout(() => {
   //   document.title = "Welcome! MaNa CaseMaster";
   // }, 2000);
-  document.title = "MaNa CaseMaster - Home";
+  document.title =
+    "MaNa CaseMaster - Home | lowercase to uppercase | uppercase to lowercase | remove extra spaces | word counter | character counter";
   const showAlert = (type, msg) => {
     setAlert({
       type: type,

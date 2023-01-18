@@ -139,7 +139,7 @@ export default function TextForm({ heading, showAlert }) {
           value={text}
         ></textarea>
         <div className="row my-3">
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="d-grid gap-2 col-4 mx-auto">
             <button
               type="submit"
               className="my-1 btn btn-primary  me-3"
@@ -162,7 +162,7 @@ export default function TextForm({ heading, showAlert }) {
               Capitalize Sentence
             </button>
           </div>
-          <div class="d-grid gap-2 col-6 mx-auto">
+          <div class="d-grid gap-2 col-4 mx-auto">
             <button
               type="submit"
               className="my-1 btn btn-primary me-3"
