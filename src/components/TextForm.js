@@ -193,7 +193,7 @@ export default function TextForm({ heading, showAlert }) {
               text.split(" ").filter((e) => {
                 return e.length !== 0;
               }).length
-            }
+            }{" "}
             words and {text.length} character
           </p>
           <h2>Preview</h2>
