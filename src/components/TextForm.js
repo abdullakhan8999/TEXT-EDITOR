@@ -168,7 +168,7 @@ export default function TextForm({ heading, showAlert }) {
               className="my-1 btn btn-primary me-3"
               onClick={handleExtraSpace}
             >
-              Extra Space
+              Remove Extra Space
             </button>
             <button
               type="submit"
