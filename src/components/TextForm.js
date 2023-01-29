@@ -21,6 +21,19 @@ export default function TextForm({ heading, showAlert }) {
     setText(newText);
   };
 
+  const SentenceConvertor = (event) => {
+    event.preventDefault();
+    if (text === "") {
+      return showAlert("primary", "Can you please provide a text.");
+    }
+
+    setText(
+      text
+        .split(". ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(". ")
+    );
+  };
   const handleCapitalizeSentence = (event) => {
     event.preventDefault();
     if (text === "") {
@@ -168,14 +181,14 @@ export default function TextForm({ heading, showAlert }) {
               className="my-1 btn btn-primary me-3"
               onClick={handleExtraSpace}
             >
-              Remove Extra Space
+            Extra Space
             </button>
             <button
               type="submit"
               className="my-1 btn btn-primary me-3"
-              onClick={handleCopy}
+              onClick={SentenceConvertor}
             >
-              Copy
+              Sentence Convertor
             </button>
             <button
               type="submit"

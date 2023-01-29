@@ -2,5 +2,7 @@
   .mediaNavBar {
     font-size: 0.9rem;
   }
-
+  .nav-link,.form-check-label  {
+    font-size: 0.8rem;
+  }
 }
